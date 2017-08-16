@@ -7,7 +7,7 @@
  * @line_number: data
  * Return: none
  **/
-void match_op(char *opcode, stack_t **stack, unsigned int line_number)
+int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	int i;
 
