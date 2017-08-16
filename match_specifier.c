@@ -1,11 +1,13 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * match_op - function that searches for appropriate function
+ * @opcode: the opcode that searches for function
+ * @stack: head pointer
+ * @line_number: data
+ * Return: none
  **/
-void match_op(char *opcode)
+void match_op(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	int i;
 
