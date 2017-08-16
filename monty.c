@@ -24,11 +24,6 @@ int main(argc, argv[])
 			printf("USAGE: monty file\n")
 			exit (EXIT_FAILURE)
 		}
-		if (file contains invalid instruction)
-		{
-			printf("L<line_number>: unknown instruction <opcode>\n")
-			exit (EXIT_FAILURE)
-		}
 		if (malloc fails || malloc can no longer malloc)
 		{
 			printf("Error: malloc failed\n")
