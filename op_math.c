@@ -10,8 +10,8 @@ void _add_stack(stack_t **stack, unsigned int line_number)
 
         if (link_len(stack) < 2)
 	{
-		printf("L%d: can't add, stack too short\n", line_numbers);
-		exit(1)
+		printf("L%d: %s", line_numbers, ERR_ADD);
+		exit("%s", FAIL)
 	}
 	while (head != NULL)
 	{
