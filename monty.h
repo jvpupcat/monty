@@ -3,6 +3,9 @@
 #define EXIT_FAILURE 1
 #include <stdio.h>
 
+/* HELPER FUNCTIONS */
+int _strcmp(char *s1, char *s2);
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,12 +36,13 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-void match_op(char *opcode, stack_t **stack, unsigned int line_number);
-char *push(stack_t **stack, unsigned int line_number);
-char *pall(stack_t **stack, unsigned int line_number);
-char *pop(stack_t **stack, unsigned int line_number);
-int swap(stack_t **stack, unsigned int line_number);
-int _add(stack_t **stack, unsigned int line_number);
-char *nop(stack_t **stack, unsigned int line_number);
+int match_op(char *opcode, stack_t **stack, unsigned int line_number);
+void *create_node(int n, stack_t **stack, unsigned int line_number);
+void *push(stack_t **stack, unsigned int line_number);
+void *pall(stack_t **stack, unsigned int line_number);
+void *pop(stack_t **stack, unsigned int line_number);
+void *swap(stack_t **stack, unsigned int line_number);
+void *_add(stack_t **stack, unsigned int line_number);
+void *nop(stack_t **stack, unsigned int line_number);
 
 #endif

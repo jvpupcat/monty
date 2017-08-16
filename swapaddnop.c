@@ -5,7 +5,7 @@
  *
  *
  **/
-char *swap(stack_t **stack, unsigned int line_number)
+void *swap(stack_t **stack, unsigned int line_number)
 {
 
 }
@@ -15,7 +15,7 @@ char *swap(stack_t **stack, unsigned int line_number)
  *
  *
  **/
-char *_add(stack_t **stack, unsigned int line_number)
+void *_add(stack_t **stack, unsigned int line_number)
 {
 
 }
@@ -25,7 +25,7 @@ char *_add(stack_t **stack, unsigned int line_number)
  *
  *
  **/
-char *nop(stack_t **stack, unsigned int line_number)
+void *nop(stack_t **stack, unsigned int line_number)
 {
 	return (NULL);
 }
