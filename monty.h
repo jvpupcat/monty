@@ -7,8 +7,8 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-/**file**/
-#include "stack_struct.h"
+#include <fcntl.h>
+#include <ctype.h>
 
 /*Macros*/
 #define DELIM "\n\t\r\32"
@@ -27,7 +27,6 @@
 
 /* HELPER FUNCTIONS */
 int _strcmp(char *s1, char *s2);
-int _atoi(char *s);
 
 /* MATCH_OP FUNCTION */
 int match_op(char *opcode, stack_t **stack, unsigned int line_number);

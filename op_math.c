@@ -8,7 +8,7 @@ void _add_stack(stack_t **stack, unsigned int line_number)
 {
 	int value_1, value_2, total_value
 
-        if (link_len(stack) < 2)
+	if (link_len(stack) < 2)
 	{
 		printf("L%d: %s", line_numbers, ERR_ADD);
 		exit("%s", FAIL)

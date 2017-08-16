@@ -6,24 +6,22 @@
  * @line_number: data
  * Return: none
  **/
-void push(stack_t **stack, unsigned int line_number, char n)
+void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node;
-	*new_node = NULL;
-	
-	int count;
-
+	stack_t *new_node = NULL;
+	char *n = NULL;
+	(void) line_number;
 	if (n == NULL)
 	{
-		fprintf(stdout, "%s", ERR_INT)
+		fprintf(stdout, "%s", ERR_INT);
 	}
 
-	
+
 	new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
 	{
-		fprintf(stdout, "%s", ERR_MALLOC)
+		fprintf(stdout, "%s", ERR_MALLOC);
 	}
 
 	new_node->n = atoi(n);
@@ -46,9 +44,8 @@ void push(stack_t **stack, unsigned int line_number, char n)
  **/
 void pall(stack_t **stack, unsigned int line_number)
 {
+	stack_t *node = *stack;
 	(void) line_number;
-	stack_t *node;
-	*node = *stack;
 
 	while (node != NULL)
 	{
