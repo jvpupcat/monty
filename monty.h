@@ -7,7 +7,8 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-
+/*Macros*/
+#define DELIM "n\t\r "
 #define TRUE 1
 /* error strings */
 #define FAIL "EXIT_FAILURE"
