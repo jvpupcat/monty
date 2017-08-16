@@ -7,8 +7,11 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+/**file**/
+#include "stack_struct.h"
+
 /*Macros*/
-#define DELIM "n\t\r "
+#define DELIM "\n\t\r\32"
 #define TRUE 1
 /* error strings */
 #define FAIL "EXIT_FAILURE"
@@ -29,11 +32,11 @@ int _strcmp(char *s1, char *s2);
 
 /* MATCH_OP FUNCTION */
 int match_op(char *opcode, stack_t **stack, unsigned int line_number);
-void *create_node(int n, stack_t **stack, unsigned int line_number);
+void *create_node(stack_t **stack, unsigned int line_number)
 void *push(stack_t **stack, unsigned int line_number);
 void *pall(stack_t **stack, unsigned int line_number);
-void *pop(stack_t **stack, unsigned int line_number);
-void *swap(stack_t **stack, unsigned int line_number);
+/**void *pop(stack_t **stack, unsigned int line_number);**/
+/**void *swap(stack_t **stack, unsigned int line_number);**/
 void *_add(stack_t **stack, unsigned int line_number);
 void *nop(stack_t **stack, unsigned int line_number);
 
