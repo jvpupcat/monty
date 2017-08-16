@@ -24,8 +24,8 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
-**listint_len - prints all the elements
-**@h: pointer to list
+**link_len - prints all the elements
+**@stack: pointer to list
 **
 **Return: number of nodes
 **/
