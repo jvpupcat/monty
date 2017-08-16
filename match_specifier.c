@@ -23,8 +23,8 @@ void match_op(char *opcode, stack_t **stack, unsigned int line_number)
 			match[i].f();
 		if (match[i].f == NULL)
 		{
-			printf("L<line_number>: unknown instruction <opcode>\n");
-			exit(EXIT_FAILURE);
+			printf("L%d: %s", line_number, ERR_INVALID);
+			exit(FAIL);
 		}
 	}
 }
