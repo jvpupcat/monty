@@ -11,8 +11,8 @@ int main(argc, argv[])
 
 	filename = fopen(filename, "r")
 	if (filename == NULL)
-		printf("Error: Can't open file %s\n", filename)
-		exit(EXIT_FAILURE)
+		printf("%s", ERR_OPEN)
+		exit(FAIL)
 
 	while (read = getline(&line, &len, filename) != -1)
 	{
