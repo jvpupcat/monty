@@ -1,5 +1,6 @@
 #ifndef STACK_STRUCT_H
 #define STACK_STRUCT_H
+#include "monty.h"
 #include <stdio.h>
 #include "monty.h"
 /**

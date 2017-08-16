@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+#include "stack_struct.h"
 #define EXIT_FAILURE 1
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,6 +30,10 @@ extern int **tracker;
 /* HELPER FUNCTIONS */
 int _strcmp(char *s1, char *s2);
 
+/* HELPER LINKED LIST FUNCTIONS */
+stack_t *create_node(int n);
+stack_t *add_dnodeint(stack_t **stack, const int n);
+stack_t *add_dnodeint_end(stack_t **stack, const int n);
 
 /* MATCH_OP FUNCTION */
 int match_op(char *opcode, stack_t **stack, unsigned int line_number);
