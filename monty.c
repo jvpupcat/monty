@@ -9,14 +9,11 @@ int main(argc, argv[])
 {
 	FILE *filename;
 
-	filename = open("bytecodes", O_RDONLY)
+	filename = fopen(filename, "r")
 	if (filename == NULL)
-		exit(EXIT_FAILURE)
-	if (cannot open file)
-	{
 		printf("Error: Can't open file %s\n", filename)
-		exit (EXIT_FAILURE)
-	}
+		exit(EXIT_FAILURE)
+
 	while (read = getline(&line, &len, filename) != -1)
 	{
 		if (file does not exist || argv > 1)
