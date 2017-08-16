@@ -1,6 +1,7 @@
 #ifndef STACK_STRUCT_H
 #define STACK_STRUCT_H
 #include <stdio.h>
+#include "monty.h"
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
