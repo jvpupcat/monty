@@ -12,7 +12,8 @@ int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 	int i;
 
 	instruction_t match[] = {
-		{"push", push}, {"pall", pall}, {NULL, NULL}
+		{"pall", pall},
+		{NULL, NULL}
 	};
 
 	for (i = 0; match[i].opcode != NULL; i++)
@@ -25,5 +26,6 @@ int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 			exit(EXIT_FAILURE);
 		}
 	}
-	return (0);
+	printf("L%d: unknown instructions %s\n", line_number, opcode);
+	exit(EXIT_FAILURE);
 }

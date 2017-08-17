@@ -15,14 +15,15 @@ int main(int argc, char *argv[])
 
 	if (argc <= 1)
 	{
-		fprintf(stdout, "%s", ERR_ARG);
+		perror("USAGE: monty file");
 		exit(EXIT_FAILURE);
 	}
 	filename = fopen(argv[1], "r");
-
 	if (filename == NULL)
-		fprintf(stdout, "%s", ERR_OPEN);
+	{
+		perror("Error: Can't open file");
 		exit(EXIT_FAILURE);
+	}
 
 	while ((read = getline(&line, &len, filename)) != -1)
 	{
@@ -34,7 +35,9 @@ int main(int argc, char *argv[])
 			tokens = strtok(NULL, DELIM);
 		}
 		store_tokens[i] = NULL;
-		match_op(store_tokens[1], 0, 0);
+		match_op(store_tokens[0], 0, 0);
+	}
+	return (EXIT_SUCCESS);
 
 
 		/**if (malloc fails || malloc can no longer malloc)
@@ -43,6 +46,5 @@ int main(int argc, char *argv[])
 			free malloc
 			exit (EXIT_FAILURE)
 		}**/
-	}
 
 }
