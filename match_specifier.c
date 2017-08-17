@@ -20,7 +20,10 @@ int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 	for (i = 0; match[i].opcode != NULL; i++)
 	{
 		if (_strcmp(opcode, match[i].opcode) == 0)
+		{
 			(match[i].f)(stack, line_number);
+			return (0);
+		}
 		if (match[i].f == NULL)
 		{
 			printf("L%d: %s", line_number, ERR_INVALID);

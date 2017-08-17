@@ -38,14 +38,11 @@ int main(int argc, char *argv[])
 		if (strcmp(tokens, "push") == 0)
 		{
 			num_stack = strtok(NULL, DELIM);
-			printf("num_stack: %s\n", num_stack);
 			push(&stack, line_number, num_stack);
-			printf("num_stack: %s\n", num_stack);	
 		}
 		else
 			match_op(tokens, &stack, line_number);
 	}
-	printf("I'm here\n");
 	return (EXIT_SUCCESS);
 
 
