@@ -24,10 +24,6 @@
 #define ERR_SWAP "can't swap, stack too short\n"
 #define ERR_ADD "can't add, stack too short\n"
 
-
-/* HELPER FUNCTIONS */
-int _strcmp(char *s1, char *s2);
-
 /* MATCH_OP FUNCTION */
 int match_op(char *opcode, stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
