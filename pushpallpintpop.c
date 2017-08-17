@@ -7,19 +7,19 @@
  * @num_stack: numbers in the stack
  * Return: none
  **/
-void push(stack_t **stack, unsigned int line_number, char *num_stack)
+void push(stack_t **stack, unsigned int line_number)
 {
+	char *num_stack;
 	stack_t *new_node = NULL;
 	(void) line_number;
 
-
+	num_stack = strtok(NULL, DELIM);
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
 		perror("Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
-	
 	new_node->n = atoi(num_stack);
 	new_node->next = NULL;
 	new_node->prev = NULL;
