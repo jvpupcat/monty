@@ -30,7 +30,7 @@ int _strcmp(char *s1, char *s2);
 
 /* MATCH_OP FUNCTION */
 int match_op(char *opcode, stack_t **stack, unsigned int line_number);
-void push(stack_t **stack, unsigned int line_number, char *num);
+void push(stack_t **stack, unsigned int line_number, char *num_stack);
 void pall(stack_t **stack, unsigned int line_number);
 /**void *pop(stack_t **stack, unsigned int line_number);**/
 /**void *swap(stack_t **stack, unsigned int line_number);**/

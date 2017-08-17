@@ -15,10 +15,11 @@ int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 		{"pall", pall},
 		{NULL, NULL}
 	};
+	
 
 	for (i = 0; match[i].opcode != NULL; i++)
 	{
-		if (_strcmp(match[i].opcode, opcode) == 0)
+		if (_strcmp(opcode, match[i].opcode) == 0)
 			(match[i].f)(stack, line_number);
 		if (match[i].f == NULL)
 		{

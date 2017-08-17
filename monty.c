@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <string.h>
 
 /**
  *
@@ -7,36 +8,44 @@
  **/
 int main(int argc, char *argv[])
 {
-	int i, read;
+
+	ssize_t read;
 	size_t len = 0;
 	FILE *filename;
-	unsigned int line_number;
-	char *tokens, *store_tokens[1024], *line = NULL;
-
-	if (argc <= 1)
+	unsigned int line_number = 0;
+	char *tokens, *line = NULL, *num_stack;
+	stack_t *stack = NULL;
+	(void) argc;
+	/**if (argc != 2)
 	{
 		perror("USAGE: monty file");
 		exit(EXIT_FAILURE);
 	}
-	filename = fopen(argv[1], "r");
 	if (filename == NULL)
 	{
 		perror("Error: Can't open file");
 		exit(EXIT_FAILURE);
-	}
-
+	}**/
+	filename = fopen(argv[1], "r");
 	while ((read = getline(&line, &len, filename)) != -1)
 	{
 		line_number++;
+		/**printf("Read: %ld\n", read);
+		printf("Line: %s\n", line);
+		printf("Len: %ld\n", len);
+		continue;**/
 		tokens = strtok(line, DELIM);
-		for (i = 0; tokens != NULL; i++)
+		if (strncmp(tokens, "push", strlen("push")) == 0)
 		{
-			store_tokens[i] = tokens;
-			tokens = strtok(NULL, DELIM);
+			num_stack = strtok(NULL, DELIM);
+			printf("num_stack: %s\n", num_stack);
+			push(&stack, line_number, num_stack);
+			printf("num_stack2: %s\n", num_stack);
 		}
-		store_tokens[i] = NULL;
-		match_op(store_tokens[0], 0, 0);
+		else
+			match_op(tokens, &stack, line_number);
 	}
+	printf("I'm here\n");
 	return (EXIT_SUCCESS);
 
 

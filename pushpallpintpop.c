@@ -10,6 +10,7 @@
 void push(stack_t **stack, unsigned int line_number, char *num_stack)
 {
 	stack_t *new_node = NULL;
+	int i;
 	(void) line_number;
 
 	if (num_stack == NULL)
@@ -17,7 +18,6 @@ void push(stack_t **stack, unsigned int line_number, char *num_stack)
 		perror("usage: push integer");
 		exit(EXIT_FAILURE);
 	}
-	int i;
 
 	for (i = 0; num_stack[i] != '\0'; i++)
 	{
