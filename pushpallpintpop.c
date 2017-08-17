@@ -13,11 +13,6 @@ void push(stack_t **stack, unsigned int line_number, char *num_stack)
 	int i;
 	(void) line_number;
 
-	if (num_stack == NULL)
-	{
-		perror("usage: push integer");
-		exit(EXIT_FAILURE);
-	}
 
 	for (i = 0; num_stack[i] != '\0'; i++)
 	{

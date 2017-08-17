@@ -11,7 +11,7 @@
 #include <ctype.h>
 
 /*Macros*/
-#define DELIM "\n\t\r\32"
+#define DELIM "\n\t\r "
 /* error strings */
 #define ERR_MALLOC "Error: malloc failed\n"
 #define FAIL "EXIT_FAILURE"

@@ -19,14 +19,14 @@ int main(int argc, char *argv[])
 	
 	if (argc != 2)
 	{
-		perror("USAGE: monty file");
+		printf("%s", ERR_ARG);
 		exit(EXIT_FAILURE);
 	}
 
 	filename = fopen(argv[1], "r");	
 	if (filename == NULL)
 	{
-		perror("Error: Can't open file");
+		printf("%s", ERR_OPEN);
 		exit(EXIT_FAILURE);
 	}
 	
@@ -35,11 +35,12 @@ int main(int argc, char *argv[])
 		line_number++;
 		tokens = strtok(line, DELIM);
 		
-		if (strncmp(tokens, "push", strlen("push")) == 0)
+		if (strcmp(tokens, "push") == 0)
 		{
 			num_stack = strtok(NULL, DELIM);
 			printf("num_stack: %s\n", num_stack);
 			push(&stack, line_number, num_stack);
+			printf("num_stack: %s\n", num_stack);	
 		}
 		else
 			match_op(tokens, &stack, line_number);
