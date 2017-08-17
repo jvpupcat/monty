@@ -4,28 +4,20 @@
  *
  *
  *
- **/
+
 void *swap(stack_t **stack, unsigned int line_number)
 {
 
-}
+}**/
 
 /**
- *
- *
- *
+ * nop - function that does nothing
+ * @stack: head pointer
+ * @line_number: number of line
+ * Return: none
  **/
-void *_add(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
-
-}
-
-/**
- *
- *
- *
- **/
-void *nop(stack_t **stack, unsigned int line_number)
-{
-	return (NULL);
+	(void) stack;
+	(void) line_number;
 }
