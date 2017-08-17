@@ -51,3 +51,32 @@ void pall(stack_t **stack, unsigned int line_number)
 		node = node->next;
 	}
 }
+/**
+ * pint - prints value top of stack
+ * @stack: arg
+ * @line_number: arg
+ * Rerturn: void
+ **/
+void pint(stack_t **stack, unsigned int line_number)
+	stack_t *end_node;
+        stack_t *former;
+        former = *stack;
+        end_node = malloc(sizeof(stack_t));
+        if (end_node == NULL)
+        {
+                printf("%s", ERR_MALLOC);
+                exit (EXIT_FAILURE);
+        }
+        end_node->n = n;
+        end_node->next = NULL;
+        if (*stack == NULL)
+        {
+                *stack = end_node;
+                return (end_node);
+        }
+        while (former->next != NULL)
+        {
+                former = former->next;
+        }
+        former->next = end_node;
+        return (end_node);
