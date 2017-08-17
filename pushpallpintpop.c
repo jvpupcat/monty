@@ -4,7 +4,6 @@
  * push - function that pushes an element to the stack
  * @stack: stack
  * @line_number: data
- * @num_stack: numbers in the stack
  * Return: none
  **/
 void push(stack_t **stack, unsigned int line_number)
@@ -62,7 +61,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || stack == NULL)
 	{
 		printf("L%d: %s", line_number, ERR_PINT);
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
 }
@@ -80,7 +79,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (stack == NULL || *stack == NULL)
 	{
 		printf("L%d: %s", line_number, ERR_POP);
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	next = (*stack)->next;
 	*stack = next;
