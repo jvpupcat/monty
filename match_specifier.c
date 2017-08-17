@@ -12,14 +12,14 @@ int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 	int i;
 
 	instruction_t match[] = {
-		{"pall", pall},
+		{"push", push}, {"pall", pall},
 		{NULL, NULL}
 	};
 
 	for (i = 0; match[i].opcode != NULL; i++)
 	{
 		if (_strcmp(match[i].opcode, opcode) == 0)
-			(match[i].f)(stack, line_number);
+			return (match[i].f)(stack, line_number);
 		if (match[i].f == NULL)
 		{
 			printf("L%d: %s", line_number, ERR_INVALID);

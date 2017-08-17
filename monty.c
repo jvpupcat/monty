@@ -34,8 +34,7 @@ int main(int argc, char *argv[])
 			store_tokens[i] = tokens;
 			tokens = strtok(NULL, DELIM);
 		}
-		store_tokens[i] = NULL;
-		match_op(store_tokens[0], 0, 0);
+		match_op(store_tokens[0]);
 	}
 	return (EXIT_SUCCESS);
 
