@@ -1,3 +1,4 @@
+#include "monty.h"
 /**
 **_add - sum of two nodes
 **@stack: arg
@@ -13,10 +14,10 @@ void _add_stack(stack_t **stack, unsigned int line_number)
 		printf("L%d: %s", line_numbers, ERR_ADD);
 		exit("%s", FAIL)
 	}
-	while (head != NULL)
+	while (*stack != NULL)
 	{
-		counter += head->n;
-		head = head->next;
+		counter += *stack->n;
+		*stack = *stack->next;
 	}
 	return (counter);
 }

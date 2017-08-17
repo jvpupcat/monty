@@ -1,27 +1,32 @@
 #include "monty.h"
+#include <string.h>
 
 /**
- *
- *
- *
+ * main - entry point
+ * @argc: arg count
+ * @argv: arg vector
+ * Return: int
  **/
 int main(int argc, char *argv[])
 {
-	int i, read;
+
+	ssize_t read;
 	size_t len = 0;
 	FILE *filename;
-	unsigned int line_number;
-	char *tokens, *store_tokens[1024], *line = NULL;
+	unsigned int line_number = 0;
+	char *tokens, *line = NULL;
+	stack_t *stack = NULL;
 
-	if (argc <= 1)
+	if (argc != 2)
 	{
-		perror("USAGE: monty file");
+		printf("%s", ERR_ARG);
 		exit(EXIT_FAILURE);
 	}
+
 	filename = fopen(argv[1], "r");
 	if (filename == NULL)
 	{
-		perror("Error: Can't open file");
+		printf("%s", ERR_OPEN);
 		exit(EXIT_FAILURE);
 	}
 
@@ -29,21 +34,17 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		tokens = strtok(line, DELIM);
-		for (i = 0; tokens != NULL; i++)
+
+		if (strcmp(tokens, "push") == 0)
 		{
-			store_tokens[i] = tokens;
-			tokens = strtok(NULL, DELIM);
+			push(&stack, line_number);
 		}
+<<<<<<< HEAD
 		match_op(store_tokens[0]);
+=======
+		else
+			match_op(tokens, &stack, line_number);
+>>>>>>> c38741386dff15b59632b8c937ef23299d92f5ee
 	}
 	return (EXIT_SUCCESS);
-
-
-		/**if (malloc fails || malloc can no longer malloc)
-		{
-			fprintf(stdout,"Error: malloc failed\n")
-			free malloc
-			exit (EXIT_FAILURE)
-		}**/
-
 }
