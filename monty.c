@@ -39,12 +39,8 @@ int main(int argc, char *argv[])
 		{
 			push(&stack, line_number);
 		}
-<<<<<<< HEAD
-		match_op(store_tokens[0]);
-=======
 		else
 			match_op(tokens, &stack, line_number);
->>>>>>> c38741386dff15b59632b8c937ef23299d92f5ee
 	}
 	return (EXIT_SUCCESS);
 }
