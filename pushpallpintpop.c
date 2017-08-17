@@ -61,8 +61,27 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL || stack == NULL)
 	{
-		printf("L%d: can't pint, stack empty", line_number);
+		printf("L%d: %s", line_number, ERR_PINT);
 		exit (EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
+}
+
+/**
+ * pop - function that removes from top of the stack
+ * @stack: head pointer
+ * @line_number: number line
+ * Return: none
+ **/
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *next;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("L%d: %s", line_number, ERR_POP);
+		exit (EXIT_FAILURE);
+	}
+	next = (*stack)->next;
+	*stack = next;
 }

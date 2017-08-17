@@ -13,7 +13,7 @@ int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 
 	instruction_t match[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint},
-		{NULL, NULL}
+		{"pop", pop}, {NULL, NULL}
 	};
 
 	for (i = 0; match[i].opcode != NULL; i++)
