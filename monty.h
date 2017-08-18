@@ -16,7 +16,7 @@
 #define ERR_MALLOC "Error: malloc failed\n"
 #define FAIL "EXIT_FAILURE"
 #define ERR_ARG "USAGE: monty file\n"
-#define ERR_OPEN "Error: Can't open file\n"
+#define ERR_OPEN "Error: Can't open file"
 #define ERR_INVALID "unknown instruction\n"
 #define ERR_INT "usage: push integer\n"
 #define ERR_PINT "can't pint, stack empty\n"
