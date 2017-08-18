@@ -20,7 +20,12 @@ void push(stack_t **stack, unsigned int line_number)
 		printf("%s", ERR_MALLOC);
 		exit(EXIT_FAILURE);
 	}
-	for (i = 0; num_stack[i]; i++)
+	if (num_stack == NULL)
+	{
+		printf("L%d: %s", line_number, ERR_INT);
+		exit(EXIT_FAILURE);
+	}
+	for (i = 0; num_stack[i] != '\0'; i++)
 	{
 		if (num_stack[i] == '-' && i == 0)
 			continue;
