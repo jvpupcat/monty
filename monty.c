@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
 		printf("%s", ERR_ARG);
 		exit(EXIT_FAILURE);
 	}
-
 	filename = fopen(argv[1], "r");
 	if (filename == NULL)
 	{
@@ -32,7 +31,7 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		tokens = strtok(line, DELIM);
-		if (tokens == NULL)
+		if (tokens == NULL || strcmp(tokens, "#") == 0)
 			continue;
 		if (strcmp(tokens, "push") == 0)
 		{
