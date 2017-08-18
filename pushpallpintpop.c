@@ -72,15 +72,13 @@ void pall(stack_t **stack, unsigned int line_number)
  **/
 void pint(stack_t **stack, unsigned int line_number)
 {
-	int result;
 
 	if (*stack == NULL || stack == NULL)
 	{
 		printf("L%d: %s", line_number, ERR_PINT);
 		exit(EXIT_FAILURE);
 	}
-	result = (*stack)->n;
-	printf("%d\n", result);
+	printf("%d\n", (*stack)->n);
 }
 
 /**
