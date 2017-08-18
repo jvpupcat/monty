@@ -43,5 +43,8 @@ int main(int argc, char *argv[])
 		else
 			match_op(tokens, &stack, line_number);
 	}
+	free(line);
+	free(stack);
+	fclose(filename);
 	return (EXIT_SUCCESS);
 }
