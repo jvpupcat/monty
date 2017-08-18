@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		tokens = strtok(line, DELIM);
-		if (tokens == NULL || strcmp(tokens, "#") == 0)
+		if (tokens == NULL || tokens[0] == '#')
 			continue;
 		if (strcmp(tokens, "push") == 0)
 		{
