@@ -26,10 +26,9 @@ void push(stack_t **stack, unsigned int line_number)
 			continue;
 		if (isdigit(num_stack[i]) == 0)
 		{
-			printf("L%d: %s", line_number, ERR_MALLOC);
+			printf("L%d: %s", line_number, ERR_INT);
 			exit(EXIT_FAILURE);
 		}
-
 	}
 	new_node->n = atoi(num_stack);
 	new_node->next = NULL;
