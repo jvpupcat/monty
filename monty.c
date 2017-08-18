@@ -1,6 +1,4 @@
 #include "monty.h"
-#include <stdlib.h>
-#include <string.h>
 
 /**
  * main - entry point
