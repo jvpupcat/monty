@@ -46,6 +46,6 @@ int main(int argc, char *argv[])
 	if (stack != NULL)
 		free_list(&stack);
 	free(line);
-        fclose(filename);
+	fclose(filename);
 	return (EXIT_SUCCESS);
 }
