@@ -29,6 +29,6 @@ int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 			exit(EXIT_FAILURE);
 		}
 	}
-	printf("L%d: unknown instructions %s\n", line_number, opcode);
+	printf("L%d: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }

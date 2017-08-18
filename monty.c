@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	filename = fopen(argv[1], "r");
 	if (filename == NULL)
 	{
-		printf("%s", ERR_OPEN);
+		printf("%s %s\n", ERR_OPEN, argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while ((read = getline(&line, &len, filename)) != -1)
