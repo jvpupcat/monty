@@ -8,6 +8,7 @@
  **/
 void push(stack_t **stack, unsigned int line_number)
 {
+	int i;
 	char *num_stack;
 	stack_t *new_node = NULL;
 	(void) line_number;
@@ -16,8 +17,20 @@ void push(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		perror("Error: malloc failed");
+		printf("%s", ERR_MALLOC);
 		exit(EXIT_FAILURE);
+	}
+
+	for (i = 0; num_stack[i]; i++)
+	{
+		if (num_stack[i] == '-' && i == 0)
+			continue;		
+ 		if (isdigit(num_stack[i]) == 0)
+		{
+			printf("L%d: %s", line_number, ERR_MALLOC);
+			exit(EXIT_FAILURE);
+		}
+		
 	}
 	new_node->n = atoi(num_stack);
 	new_node->next = NULL;
@@ -28,6 +41,7 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
+	
 }
 
 /**
@@ -82,5 +96,6 @@ void pop(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	next = (*stack)->next;
+	free(*stack);
 	*stack = next;
 }
