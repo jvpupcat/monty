@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
-**free_list - free the list
-**@head: head of the nodes or start of them
-**Return: void
+ * free_list - free the list
+ * @stack: head of the nodes or start of them
+ * Return: void
 **
 **/
 void free_list(stack_t **stack)
