@@ -30,7 +30,9 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
-/**void *swap(stack_t **stack, unsigned int line_number);**/
+/**void swap(stack_t **stack, unsigned int line_number);**/
 /**void _add_stack(stack_t **stack, unsigned int line_number);**/
 void nop(stack_t **stack, unsigned int line_number);
+
+stack_t list_len(stack_t **stack);
 #endif

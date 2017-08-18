@@ -34,7 +34,8 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		tokens = strtok(line, DELIM);
-
+		if (tokens == NULL)
+			continue;
 		if (strcmp(tokens, "push") == 0)
 		{
 			push(&stack, line_number);
