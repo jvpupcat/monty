@@ -5,15 +5,15 @@ A version of `interpreter for Monty ByteCodes files` named `monty ` created by W
 
 
 ## Example of monty function:
-`push 1
- push 2
- push 3
- pall`
+ `push 1`
+ `push 2`
+ `push 3`
+ `pall`
 
 * Output: prints to stdout: 
-`3
- 2
- 1`
+ `3`
+ `2`
+ `1`
 
 ## Project Notes
 
