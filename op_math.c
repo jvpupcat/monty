@@ -8,16 +8,14 @@
 void _add(stack_t **stack, unsigned int line_number)
 {
 
-	if (link_len(stack) < 2)
+	if (list_len(stack) < 2)
 	{
-		printf("L%d: %s", line_numbers, ERR_ADD);
-		exit("%s", FAIL)
+		printf("L%d: %s", line_number, ERR_ADD);
+		exit(EXIT_FAILURE);
 	}
-	while (*stack != NULL)
-	{
-		(*stack)->next->n += *stack->n;
-		*stack = *stack->next;
-	}
-	free(*stack);
+
+	(*stack)->next->n += (*stack)->n;
+	*stack = (*stack)->next;
+	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
