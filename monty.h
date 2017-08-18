@@ -24,6 +24,7 @@
 #define ERR_SWAP "can't swap, stack too short\n"
 #define ERR_ADD "can't add, stack too short\n"
 #define ERR_SUB "can't sub, stack too short\n"
+#define ERR_MUL "can't mul, stack too short\n"
 
 
 /* MATCH_OP FUNCTION */
@@ -36,6 +37,7 @@ size_t list_len(stack_t **stack/** unsigned int line_number**/);
 void swap(stack_t **stack, unsigned int line_number);
 
 
+void _mul(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
