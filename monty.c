@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdlib.h>
 #include <string.h>
 
 /**
@@ -29,7 +30,6 @@ int main(int argc, char *argv[])
 		printf("%s", ERR_OPEN);
 		exit(EXIT_FAILURE);
 	}
-
 	while ((read = getline(&line, &len, filename)) != -1)
 	{
 		line_number++;
@@ -43,7 +43,9 @@ int main(int argc, char *argv[])
 		else
 			match_op(tokens, &stack, line_number);
 	}
+	if (stack != NULL)
+		free_list(&stack);
 	free(line);
-	fclose(filename);
+        fclose(filename);
 	return (EXIT_SUCCESS);
 }

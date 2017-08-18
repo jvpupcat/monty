@@ -20,7 +20,6 @@ void push(stack_t **stack, unsigned int line_number)
 		printf("%s", ERR_MALLOC);
 		exit(EXIT_FAILURE);
 	}
-
 	for (i = 0; num_stack[i]; i++)
 	{
 		if (num_stack[i] == '-' && i == 0)
@@ -41,7 +40,6 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
-
 }
 
 /**
