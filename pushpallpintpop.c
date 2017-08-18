@@ -29,7 +29,6 @@ void push(stack_t **stack, unsigned int line_number)
 			printf("L%d: %s", line_number, ERR_INT);
 			exit(EXIT_FAILURE);
 		}
-
 	}
 	new_node->n = atoi(num_stack);
 	new_node->next = NULL;
