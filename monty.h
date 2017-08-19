@@ -28,6 +28,8 @@
 #define ERR_DIV "can't div, stack too short\n"
 #define ERR_ZERO "division by zero\n"
 #define ERR_MOD "can't mod, stack too short\n"
+#define ERR_PCHAR "can't pchar, value out of range\n"
+#define ERR_EMPPCHAR "can't pchar, stack empty\n"
 /* MATCH_OP FUNCTION */
 int match_op(char *opcode, stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
@@ -36,12 +38,15 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 size_t list_len(stack_t **stack/** unsigned int line_number**/);
 void swap(stack_t **stack, unsigned int line_number);
-
+void nop(stack_t **stack, unsigned int line_number);
+void free_list(stack_t **stack);
+/* MATH FUNCTIONS*/
 void _mod(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
-void free_list(stack_t **stack);
+/* PCHAR & PSTR */
+void pchar(stack_t **stack, unsigned int line_number);
+/**void pstr(stack_t **stack, unsigned int line_number);**/
 #endif
