@@ -26,7 +26,8 @@
 #define ERR_SUB "can't sub, stack too short\n"
 #define ERR_MUL "can't mul, stack too short\n"
 #define ERR_DIV "can't div, stack too short\n"
-
+#define ERR_ZERO "division by zero\n"
+#define ERR_MOD "can't mod, stack too short\n"
 /* MATCH_OP FUNCTION */
 int match_op(char *opcode, stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
@@ -36,6 +37,7 @@ void pop(stack_t **stack, unsigned int line_number);
 size_t list_len(stack_t **stack/** unsigned int line_number**/);
 void swap(stack_t **stack, unsigned int line_number);
 
+void _mod(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);

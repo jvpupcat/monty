@@ -14,7 +14,8 @@ int match_op(char *opcode, stack_t **stack, unsigned int line_number)
 	instruction_t match[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint},
 		{"pop", pop}, {"swap", swap}, {"nop", nop}, {"add", _add},
-		{"div", _div}, {"mul", _mul}, {"sub", _sub}, {NULL, NULL}
+		{"div", _div}, {"mul", _mul}, {"sub", _sub}, {"mod", _mod},
+		{NULL, NULL}
 	};
 
 	for (i = 0; match[i].opcode != NULL; i++)

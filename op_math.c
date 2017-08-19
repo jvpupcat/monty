@@ -69,8 +69,37 @@ void _div(stack_t **stack, unsigned int line_number)
 		printf("L%d: %s", line_number, ERR_DIV);
 		exit(EXIT_FAILURE);
 	}
+	if ((*stack)->n == 0)
+	{
+		printf("L%d: %s", line_number, ERR_ZERO);
+		exit(EXIT_FAILURE);
+	}
 	(*stack)->next->n /= (*stack)->n;
 	*stack = (*stack)->next;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
+/**
+**_mod - div of two nodes
+**@stack: arg
+**@line_number: arg
+**Return: sum of two nodes
+**/
+void _mod(stack_t **stack, unsigned int line_number)
+{
+	if (list_len(stack) < 2)
+	{
+		printf("L%d: %s", line_number, ERR_MOD);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n == 0)
+	{
+		printf("L%d: %s", line_number, ERR_ZERO);
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n %= (*stack)->n;
+	*stack = (*stack)->next;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
+}
+
