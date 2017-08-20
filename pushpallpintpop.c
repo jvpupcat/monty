@@ -57,7 +57,7 @@ void pall(stack_t **stack, unsigned int line_number)
 	stack_t *node = *stack;
 	(void) line_number;
 
-	if (stack == NULL || *stack == NULL)
+	if (stack == NULL)
 		return;
 
 	while (node != NULL)
@@ -75,7 +75,7 @@ void pall(stack_t **stack, unsigned int line_number)
 void pint(stack_t **stack, unsigned int line_number)
 {
 
-	if (*stack == NULL || stack == NULL)
+	if (stack == NULL)
 	{
 		printf("L%d: %s", line_number, ERR_PINT);
 		exit(EXIT_FAILURE);
@@ -93,7 +93,7 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *next;
 
-	if (stack == NULL || *stack == NULL)
+	if (stack == NULL)
 	{
 		printf("L%d: %s", line_number, ERR_POP);
 		exit(EXIT_FAILURE);
