@@ -33,3 +33,29 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * pstr - function that prints a string
+ * @stack: head pointer
+ * @line_number: number line
+ * Return: none
+ **/
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *node = *stack;
+	(void) line_number;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("%s", ERR_PSTR);
+		return;
+	}
+	while (node != NULL)
+	{
+		if ((node->n) < 0 || (node->n) >127)
+			putchar('\n');
+		putchar(node->n);
+		node = node->next;
+	}
+	putchar('\n');
+}

@@ -30,6 +30,7 @@
 #define ERR_MOD "can't mod, stack too short\n"
 #define ERR_PCHAR "can't pchar, value out of range\n"
 #define ERR_EMPPCHAR "can't pchar, stack empty\n"
+#define ERR_PSTR "\n"
 /* MATCH_OP FUNCTION */
 int match_op(char *opcode, stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
@@ -48,5 +49,5 @@ void _sub(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 /* PCHAR & PSTR */
 void pchar(stack_t **stack, unsigned int line_number);
-/**void pstr(stack_t **stack, unsigned int line_number);**/
+void pstr(stack_t **stack, unsigned int line_number);
 #endif
