@@ -92,7 +92,7 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *next;
 
-	if (stack == NULL)
+	if (stack == NULL || *stack == NULL)
 	{
 		printf("L%d: %s", line_number, ERR_POP);
 		exit(EXIT_FAILURE);
