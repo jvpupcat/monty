@@ -8,7 +8,6 @@
  **/
 int main(int argc, char *argv[])
 {
-
 	ssize_t read;
 	size_t len = 0;
 	FILE *filename;

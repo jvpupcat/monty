@@ -45,15 +45,17 @@ void pstr(stack_t **stack, unsigned int line_number)
 	stack_t *node = *stack;
 	(void) line_number;
 
-	if (stack == NULL || *stack == NULL)
+	if (stack == NULL)
 	{
 		printf("%s", ERR_PSTR);
 		return;
 	}
 	while (node != NULL)
 	{
-		if ((node->n) < 0 || (node->n) >127)
-			putchar('\n');
+		if ((node->n) < 0 || (node->n) > 127 || (node->n) == 0)
+		{
+			break;
+		}
 		putchar(node->n);
 		node = node->next;
 	}
